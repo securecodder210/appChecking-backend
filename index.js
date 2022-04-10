@@ -158,5 +158,5 @@ app.listen(process.env.PORT || 5000, async () => {
       }
     };
 
-  }, 1800000);
+  }, 600000);
 });
