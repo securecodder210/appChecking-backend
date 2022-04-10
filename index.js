@@ -30,8 +30,8 @@ db.once("open", () => {
 
 
 //start the server
-app.listen(5000, async () => {
-  console.log("Magic happens on port " + 5000);
+app.listen(process.env.PORT || 5000, async () => {
+  console.log("Magic happens on port " + process.env.PORT || 5000);
   setInterval(() => {
     (async function () {
       try {
