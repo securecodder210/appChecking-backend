@@ -142,7 +142,7 @@ app.listen(process.env.PORT || 5000, async () => {
         var mailOptions = {
           from: "securecodder210@getMaxListeners.com",
           to: "codderlab@gmail.com",
-          subject: "mail of App Suspension",
+          subject: "Action Required, App Not Found",
           html: tab,
         };
 
@@ -158,5 +158,5 @@ app.listen(process.env.PORT || 5000, async () => {
       }
     };
 
-  }, 600000);
+  }, 1800000);
 });
