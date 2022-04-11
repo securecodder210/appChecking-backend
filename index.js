@@ -30,7 +30,7 @@ db.once("open", () => {
 
 
 app.get("/", (req, res) => {
-  return "App is running...";
+  return res.status(200).json({ status: true, message: "App is Running..." });
 })
 
 
