@@ -33,7 +33,7 @@ db.once("open", () => {
 app.listen(process.env.PORT || 5000, async () => {
   console.log("Magic happens on port " + process.env.PORT || 5000);
   (function loop() {
-    setTimeout(function () {
+    setTimeout(async function () {
       try {
         const app = await AddApp.find();
         // console.log(app)
