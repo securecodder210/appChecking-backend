@@ -28,11 +28,10 @@ db.once("open", () => {
   console.log("MONGO: successfully connected to db");
 });
 
-setInterval(() => {
-  app.get("/", (req, res) => {
-    return "App is running...";
-  })
-}, 1200000)
+
+app.get("/", (req, res) => {
+  return "App is running...";
+})
 
 
 //start the server
@@ -76,6 +75,12 @@ app.listen(process.env.PORT || 5000, async () => {
               });
           });
         }
+
+        axios
+          .get(
+            "https://appchecking-backend.herokuapp.com/"
+          )
+
       } catch (error) {
         console.log(error);
       }
