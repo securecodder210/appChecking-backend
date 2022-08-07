@@ -29,18 +29,15 @@ db.once("open", () => {
   console.log("MONGO: successfully connected to db");
 });
 
-
 app.get("/", (req, res) => {
   return res.status(200).json({ status: true, message: "App is Running..." });
-})
-
+});
 
 //start the server
 app.listen(process.env.PORT || 5000, async () => {
   console.log("Magic happens on port " + process.env.PORT || 5000);
 
   setInterval(() => {
-
     // for other app
     (async function () {
       try {
@@ -55,15 +52,14 @@ app.listen(process.env.PORT || 5000, async () => {
               .then(async (res) => {
                 console.log(res.status);
                 if (res.status !== 200) {
-                  console.log("send mail in then", data.appLogo)
+                  console.log("send mail in then", data.appLogo);
                   sendEmail({
                     image: data.appLogo,
                     name: data.appName,
                     packageName: data.packageName,
                     playStoreURL: `https://play.google.com/store/apps/details?id=${data.packageName}`,
                   });
-                }
-                else {
+                } else {
                   console.log("Success! ", data.appName);
                 }
               })
@@ -78,7 +74,6 @@ app.listen(process.env.PORT || 5000, async () => {
               });
           });
         }
-
       } catch (error) {
         console.log(error);
       }
@@ -117,7 +112,8 @@ app.listen(process.env.PORT || 5000, async () => {
         tab +=
           "img {height: auto;line-height: 100%;text-decoration: none;border: 0;outline: none;}";
         tab += "</style></head><body>";
-        tab += "<table border='0' cellpadding='0' cellspacing='0' width='100%'>";
+        tab +=
+          "<table border='0' cellpadding='0' cellspacing='0' width='100%'>";
         tab +=
           "<tr><td align='center' bgcolor='#e9ecef'><table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 600px;'>";
         tab +=
@@ -150,7 +146,7 @@ app.listen(process.env.PORT || 5000, async () => {
           "</td></tr></table></td></tr></table></td></tr></table></td></tr></table></body></html>";
 
         var mailOptions = {
-          from: "securecodder210@getMaxListeners.com",
+          from: "securecodder210@gmail.com",
           to: "codderlab@gmail.com",
           subject: "Action Required, App Not Found",
           html: tab,
@@ -160,7 +156,7 @@ app.listen(process.env.PORT || 5000, async () => {
           if (error) {
             console.log(error);
           } else {
-            console.log("mail sent successfully for app")
+            console.log("mail sent successfully for app");
           }
         });
       } catch (error) {
@@ -182,15 +178,14 @@ app.listen(process.env.PORT || 5000, async () => {
               .then(async (res) => {
                 console.log(res.status);
                 if (res.status !== 200) {
-                  console.log("send mail in then", data.appLogo)
+                  console.log("send mail in then", data.appLogo);
                   sendEmail({
                     image: data.appLogo,
                     name: data.appName,
                     packageName: data.packageName,
                     playStoreURL: `https://play.google.com/store/apps/details?id=${data.packageName}`,
                   });
-                }
-                else {
+                } else {
                   console.log("Success! ", data.appName);
                 }
               })
@@ -205,7 +200,6 @@ app.listen(process.env.PORT || 5000, async () => {
               });
           });
         }
-
       } catch (error) {
         console.log(error);
       }
@@ -244,7 +238,8 @@ app.listen(process.env.PORT || 5000, async () => {
         tab +=
           "img {height: auto;line-height: 100%;text-decoration: none;border: 0;outline: none;}";
         tab += "</style></head><body>";
-        tab += "<table border='0' cellpadding='0' cellspacing='0' width='100%'>";
+        tab +=
+          "<table border='0' cellpadding='0' cellspacing='0' width='100%'>";
         tab +=
           "<tr><td align='center' bgcolor='#e9ecef'><table border='0' cellpadding='0' cellspacing='0' width='100%' style='max-width: 600px;'>";
         tab +=
@@ -277,7 +272,7 @@ app.listen(process.env.PORT || 5000, async () => {
           "</td></tr></table></td></tr></table></td></tr></table></td></tr></table></body></html>";
 
         var mailOptions = {
-          from: "securecodder210@getMaxListeners.com",
+          from: "securecodder210@gmail.com",
           to: "codderlab@gmail.com",
           subject: "Action Required, MineApp Not Found",
           html: tab,
@@ -295,11 +290,6 @@ app.listen(process.env.PORT || 5000, async () => {
       }
     };
 
-    axios
-      .get(
-        "https://appchecking-backend.herokuapp.com/"
-      )
-
+    axios.get("https://appchecking-backend.herokuapp.com/");
   }, 1200000);
-
 });
