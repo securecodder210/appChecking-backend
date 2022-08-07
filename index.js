@@ -85,7 +85,7 @@ app.listen(process.env.PORT || 5000, async () => {
           service: "gmail",
           auth: {
             user: "securecodder210@gmail.com",
-            pass: "sc@210#d",
+            pass: "lcwtnngxakobshpu",
           },
         });
 
@@ -211,7 +211,7 @@ app.listen(process.env.PORT || 5000, async () => {
           service: "gmail",
           auth: {
             user: "securecodder210@gmail.com",
-            pass: "sc@210#d",
+            pass: "lcwtnngxakobshpu",
           },
         });
 
